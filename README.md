@@ -1,6 +1,6 @@
 # UK housing ABM development history
 This repository includes all the developed and internally presented versions of the housing ABM in NetLogo format.
-A collated PowerPoint presentation with all the experiments is available in the following link <https://gla-my.sharepoint.com/:p:/g/personal/yahya_gamalaldin_glasgow_ac_uk/ES__WoB4xOBBrj-_c5VKFwEBWjYhBKQ4FFo9mF99Tm5jDQ?e=Lm7Amz>. The presentation is ordered based on the model version used for each experiment, rather than the date of the results were presented. Each section also refers to the date and the label of the presentation file (shared locally with the involved team members) where the results and the model updates are available.
+A collated PowerPoint presentation with all the experiments is available in the following link <https://gla-my.sharepoint.com/:p:/g/personal/yahya_gamalaldin_glasgow_ac_uk/ES__WoB4xOBBrj-_c5VKFwEBWjYhBKQ4FFo9mF99Tm5jDQ?e=Lm7Amz>. The presentation is ordered based on the model version used for each experiment, rather than the date at which the results were presented. Each section also refers to the date and the label of the presentation file (shared locally with the involved team members) where the results and the model updates are available.
 
 ## List of experiments
 The experiments applied for each version are as follows.
