@@ -1,5 +1,6 @@
 # UK housing ABM development history
-This repository includes all the developed and internally presented versions of the housing ABM in NetLogo format. Versions 18.x.x are ones developed without a representation of aging (last version 18.4.2 is [published in JASSS](http://jasss.soc.surrey.ac.uk/27/4/5.html)).
+This repository includes all the developed and internally presented versions of the housing ABM in NetLogo format. Versions 18.x.x are ones developed without a representation of aging (last version 18.4.2 is [published in JASSS](http://jasss.soc.surrey.ac.uk/27/4/5.html)). Versions 19.x.x are ones including a representation of aging, wealth and inheritance.
+
 A collated PowerPoint presentation with all the experiments is available in [this link](https://gla-my.sharepoint.com/:p:/g/personal/yahya_gamalaldin_glasgow_ac_uk/ES__WoB4xOBBrj-_c5VKFwEBWjYhBKQ4FFo9mF99Tm5jDQ?e=Lm7Amz). The presentation is ordered based on the model version used for each experiment, rather than the date at which the results were presented. Each section also refers to the date and the label of the presentation file (shared locally with the involved team members) where the results and the model updates are available.
 
 ## List of experiments
