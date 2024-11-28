@@ -101,7 +101,15 @@ The experiments applied for each version are as follows.
         - Baseline without right-to-buy allowed
 15. Version [19.0.19](https://github.com/YahyaGamal/UK_Housing_ABM_History/blob/main/NetLogo/Housing_Market_Model_19.0.19.nlogo)
     - Increase LTI from 3 to 6 for all buyers
-    - Increase LTI from 3 to 6 for first-time buyers  
+    - Increase LTI from 3 to 6 for first-time buyers
+16. Version [19.1.1](https://github.com/YahyaGamal/UK_Housing_ABM_History/blob/main/NetLogo/Housing_Market_Model_19.1.1.nlogo)
+    - Update stamp duty
+        - Increase stamp duty base tax for multiple properties from 3% to 5%
+        - Add stamp duty tax of 2% on the portion from £125,001 to £250,000
+    - Increase LTI from 4.5 to 6 for all buyers
+    - Labour budget
+        - (a) Update stamp duty and increase LTI for first time buyers from 4.5 to 6
+        - Apply (a) and increase affordability from 18% to 33%
 
 ## Notes
 
