@@ -110,6 +110,10 @@ The experiments applied for each version are as follows.
     - Labour budget
         - (a) Update stamp duty and increase LTI for first time buyers from 4.5 to 6
         - Apply (a) and increase affordability from 18% to 33%
+16. Version [19.1.2](https://github.com/YahyaGamal/UK_Housing_ABM_History/blob/main/NetLogo/Housing_Market_Model_19.1.1.nlogo)
+    - Modify council tax
+        - Initialise the model with council taxes and evaluate the council taxes based on the initial price
+        - Update council taxes based on prices at year 300
 
 ## Notes
 
