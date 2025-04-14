@@ -8815,7 +8815,7 @@ NetLogo 6.4.0
 @#$#@#$#@
 @#$#@#$#@
 <experiments>
-  <experiment name="241104 Baseline" repetitions="5" runMetricsEveryStep="true">
+  <experiment name="241104 Baseline" repetitions="20" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
     <exitCondition>(ticks / TicksPerYear) &gt;= nYears</exitCondition>
