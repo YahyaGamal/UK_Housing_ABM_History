@@ -4983,7 +4983,7 @@ MaxLoanToValue
 MaxLoanToValue
 0
 100
-90.0
+92.0
 1
 1
 %
@@ -5825,7 +5825,7 @@ FullyPaidMortgageOwners
 FullyPaidMortgageOwners
 0
 100
-0.0
+4.0
 1
 1
 %
@@ -6088,7 +6088,7 @@ MaxLoanToValueFirstTime
 MaxLoanToValueFirstTime
 0
 100
-90.0
+91.0
 1
 1
 %
@@ -7304,7 +7304,7 @@ SavingsSocial
 SavingsSocial
 0
 100
-5.0
+6.0
 1
 1
 % of surplus income
@@ -7561,7 +7561,7 @@ onMarketPeriodMortgage
 onMarketPeriodMortgage
 0
 120
-8.0
+10.0
 1
 1
 ticks
@@ -8039,7 +8039,7 @@ SLIDER
 843
 903
 1016
-937
+936
 council-tax-A
 council-tax-A
 1000
@@ -8054,7 +8054,7 @@ SLIDER
 844
 937
 1017
-971
+970
 council-tax-B
 council-tax-B
 1000
@@ -8069,7 +8069,7 @@ SLIDER
 844
 970
 1017
-1004
+1003
 council-tax-C
 council-tax-C
 1000
@@ -8084,7 +8084,7 @@ SLIDER
 844
 1003
 1017
-1037
+1036
 council-tax-D
 council-tax-D
 1000
@@ -8099,7 +8099,7 @@ SLIDER
 844
 1037
 1017
-1071
+1070
 council-tax-E
 council-tax-E
 1000
@@ -8114,7 +8114,7 @@ SLIDER
 844
 1070
 1017
-1104
+1103
 council-tax-F
 council-tax-F
 1000
@@ -8129,7 +8129,7 @@ SLIDER
 844
 1103
 1017
-1137
+1136
 council-tax-G
 council-tax-G
 1000
@@ -8144,7 +8144,7 @@ SLIDER
 844
 1135
 1017
-1169
+1168
 council-tax-H
 council-tax-H
 1000
@@ -8159,7 +8159,7 @@ SWITCH
 844
 869
 1016
-903
+902
 council-tax?
 council-tax?
 0
@@ -41107,29 +41107,29 @@ set EntryRate 25
       <value value="0"/>
     </enumeratedValueSet>
   </experiment>
-  <experiment name="250414 Baseline" repetitions="10" runMetricsEveryStep="true">
+  <experiment name="250414 Baseline" repetitions="20" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
     <exitCondition>(ticks / TicksPerYear) &gt;= nYears</exitCondition>
-    <metric>count houses with [myType = "mortgage"]</metric>
-    <metric>count houses with [myType = "rent"]</metric>
-    <metric>count owners with [mytype = "mortgage"]</metric>
-    <metric>count owners with [mytype = "rent"]</metric>
-    <metric>count owners with [member? "mortgage" on-market-type]</metric>
-    <metric>count owners with [member? "rent" on-market-type]</metric>
-    <metric>count owners with [member? "buy-to-let" on-market-type]</metric>
-    <metric>(mean [income] of owners with [mytype = "mortgage"] + mean [sum income-rent] of owners with [mytype = "mortgage"]) / 10000</metric>
-    <metric>mean [income] of owners with [mytype = "rent"] / 10000</metric>
-    <metric>(mean [income] of owners with [myType = "mortgage" and propensity &gt; (1 - investors)] + mean [sum income-rent] of owners with [myType = "mortgage" and propensity &gt; (1 - investors)]) / 10000</metric>
-    <metric>mean [capital] of owners with [myType = "mortgage"] / 10000</metric>
-    <metric>mean [capital] of owners with [myType = "rent"] / 10000</metric>
-    <metric>mean [capital] of owners with [myType = "mortgage" and propensity &gt; (1 - investors)] / 10000</metric>
+    <metric>ifelse-value (any? houses with [myType = "mortgage"]) [count houses with [myType = "mortgage"]] [0]</metric>
+    <metric>ifelse-value (any? houses with [myType = "rent"]) [count houses with [myType = "rent"]] [0]</metric>
+    <metric>ifelse-value (any? owners with [mytype = "mortgage"]) [count owners with [mytype = "mortgage"]] [0]</metric>
+    <metric>ifelse-value (any? owners with [mytype = "rent"]) [count owners with [mytype = "rent"]] [0]</metric>
+    <metric>ifelse-value (any? owners with [member? "mortgage" on-market-type]) [count owners with [member? "mortgage" on-market-type]] [0]</metric>
+    <metric>ifelse-value (any? owners with [member? "rent" on-market-type]) [count owners with [member? "rent" on-market-type]] [0]</metric>
+    <metric>ifelse-value (any? owners with [member? "buy-to-let" on-market-type]) [count owners with [member? "buy-to-let" on-market-type]] [0]</metric>
+    <metric>ifelse-value (any? owners with [mytype = "mortgage"]) [(mean [income] of owners with [mytype = "mortgage"] + mean [sum income-rent] of owners with [mytype = "mortgage"]) / 10000] [0]</metric>
+    <metric>ifelse-value (any? owners with [mytype = "rent"]) [mean [income] of owners with [mytype = "rent"] / 10000] [0]</metric>
+    <metric>ifelse-value (any? owners with [myType = "mortgage" and propensity &gt; (1 - investors)]) [(mean [income] of owners with [myType = "mortgage" and propensity &gt; (1 - investors)] + mean [sum income-rent] of owners with [myType = "mortgage" and propensity &gt; (1 - investors)]) / 10000] [0]</metric>
+    <metric>ifelse-value (any? owners with [myType = "mortgage"]) [mean [capital] of owners with [myType = "mortgage"] / 10000] [0]</metric>
+    <metric>ifelse-value (any? owners with [myType = "rent"]) [mean [capital] of owners with [myType = "rent"] / 10000] [0]</metric>
+    <metric>ifelse-value (any? owners with [myType = "mortgage" and propensity &gt; (1 - investors)]) [mean [capital] of owners with [myType = "mortgage" and propensity &gt; (1 - investors)] / 10000] [0]</metric>
     <metric>medianPriceOfHousesForSale</metric>
     <metric>medianSalePriceHouses</metric>
     <metric>medianPriceOfHousesForRent</metric>
     <metric>medianRentPriceRentHouses</metric>
-    <metric>count owners with [on-market-type = "mortgage" and first-time? = true]</metric>
-    <metric>count owners with [first-time? = true]</metric>
+    <metric>ifelse-value (any? owners with [on-market-type = "mortgage" and first-time? = true]) [count owners with [on-market-type = "mortgage" and first-time? = true]] [0]</metric>
+    <metric>ifelse-value (any? owners with [first-time? = true]) [count owners with [first-time? = true]] [0]</metric>
     <metric>medianPriceFirstTime</metric>
     <metric>nWealth10k</metric>
     <metric>nWealth10k-50k</metric>
@@ -41139,25 +41139,25 @@ set EntryRate 25
     <metric>nWealth2m-5m</metric>
     <metric>nWealth5m</metric>
     <metric>gini-wealth</metric>
-    <metric>count owners with [length my-ownership = 0]</metric>
-    <metric>count owners with [length my-ownership = 1]</metric>
-    <metric>count owners with [length my-ownership = 2]</metric>
-    <metric>count owners with [length my-ownership = 3]</metric>
-    <metric>count owners with [length my-ownership &gt; 3]</metric>
+    <metric>ifelse-value (any? owners with [length my-ownership = 0]) [count owners with [length my-ownership = 0]] [0]</metric>
+    <metric>ifelse-value (any? owners with [length my-ownership = 1]) [count owners with [length my-ownership = 1]] [0]</metric>
+    <metric>ifelse-value (any? owners with [length my-ownership = 2]) [count owners with [length my-ownership = 2]] [0]</metric>
+    <metric>ifelse-value (any? owners with [length my-ownership = 3]) [count owners with [length my-ownership = 3]] [0]</metric>
+    <metric>ifelse-value (any? owners with [length my-ownership &gt; 3]) [count owners with [length my-ownership &gt; 3]] [0]</metric>
     <metric>medianSalePriceXYLocality</metric>
     <metric>medianSalePriceXYModifyRadius</metric>
     <metric>medianRentPriceXYLocality</metric>
     <metric>medianRentPriceXYModifyRadius</metric>
     <metric>ageOwnershipWealth</metric>
-    <metric>count houses with [myType = "social"]</metric>
+    <metric>ifelse-value (any? houses with [myType = "social"]) [count houses with [myType = "social"]] [0]</metric>
     <metric>length transactionsRightToBuy</metric>
     <metric>medianPriceRightToBuy</metric>
     <metric>medianPriceOfHousesForRightToBuy</metric>
     <metric>medianRentPriceSocialHouses</metric>
     <metric>medianPriceOfHousesForSocial</metric>
     <metric>length [waiting-list] of public-sector 0</metric>
-    <metric>count owners with [myType = "social"]</metric>
-    <metric>count owners with [member? "right-to-buy" mortgage-type]</metric>
+    <metric>ifelse-value (any? owners with [myType = "social"]) [count owners with [myType = "social"]] [0]</metric>
+    <metric>ifelse-value (any? owners with [member? "right-to-buy" mortgage-type]) [count owners with [member? "right-to-buy" mortgage-type]] [0]</metric>
     <metric>nBandA</metric>
     <metric>nBandB</metric>
     <metric>nBandC</metric>
@@ -41647,33 +41647,30 @@ set EntryRate 25
       <value value="0"/>
     </enumeratedValueSet>
   </experiment>
-  <experiment name="250414 Council tax" repetitions="10" runMetricsEveryStep="true">
+  <experiment name="250414 Council tax" repetitions="20" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go
-if (ticks / TicksPerYear) = mYear [
-  ask houses [set council-tax report-council-tax self]
-  assign-patch-council-tax
-]</go>
+if (ticks / TicksPerYear) = mYear [update-council-tax]</go>
     <exitCondition>(ticks / TicksPerYear) &gt;= nYears</exitCondition>
-    <metric>count houses with [myType = "mortgage"]</metric>
-    <metric>count houses with [myType = "rent"]</metric>
-    <metric>count owners with [mytype = "mortgage"]</metric>
-    <metric>count owners with [mytype = "rent"]</metric>
-    <metric>count owners with [member? "mortgage" on-market-type]</metric>
-    <metric>count owners with [member? "rent" on-market-type]</metric>
-    <metric>count owners with [member? "buy-to-let" on-market-type]</metric>
-    <metric>(mean [income] of owners with [mytype = "mortgage"] + mean [sum income-rent] of owners with [mytype = "mortgage"]) / 10000</metric>
-    <metric>mean [income] of owners with [mytype = "rent"] / 10000</metric>
-    <metric>(mean [income] of owners with [myType = "mortgage" and propensity &gt; (1 - investors)] + mean [sum income-rent] of owners with [myType = "mortgage" and propensity &gt; (1 - investors)]) / 10000</metric>
-    <metric>mean [capital] of owners with [myType = "mortgage"] / 10000</metric>
-    <metric>mean [capital] of owners with [myType = "rent"] / 10000</metric>
-    <metric>mean [capital] of owners with [myType = "mortgage" and propensity &gt; (1 - investors)] / 10000</metric>
+    <metric>ifelse-value (any? houses with [myType = "mortgage"]) [count houses with [myType = "mortgage"]] [0]</metric>
+    <metric>ifelse-value (any? houses with [myType = "rent"]) [count houses with [myType = "rent"]] [0]</metric>
+    <metric>ifelse-value (any? owners with [mytype = "mortgage"]) [count owners with [mytype = "mortgage"]] [0]</metric>
+    <metric>ifelse-value (any? owners with [mytype = "rent"]) [count owners with [mytype = "rent"]] [0]</metric>
+    <metric>ifelse-value (any? owners with [member? "mortgage" on-market-type]) [count owners with [member? "mortgage" on-market-type]] [0]</metric>
+    <metric>ifelse-value (any? owners with [member? "rent" on-market-type]) [count owners with [member? "rent" on-market-type]] [0]</metric>
+    <metric>ifelse-value (any? owners with [member? "buy-to-let" on-market-type]) [count owners with [member? "buy-to-let" on-market-type]] [0]</metric>
+    <metric>ifelse-value (any? owners with [mytype = "mortgage"]) [(mean [income] of owners with [mytype = "mortgage"] + mean [sum income-rent] of owners with [mytype = "mortgage"]) / 10000] [0]</metric>
+    <metric>ifelse-value (any? owners with [mytype = "rent"]) [mean [income] of owners with [mytype = "rent"] / 10000] [0]</metric>
+    <metric>ifelse-value (any? owners with [myType = "mortgage" and propensity &gt; (1 - investors)]) [(mean [income] of owners with [myType = "mortgage" and propensity &gt; (1 - investors)] + mean [sum income-rent] of owners with [myType = "mortgage" and propensity &gt; (1 - investors)]) / 10000] [0]</metric>
+    <metric>ifelse-value (any? owners with [myType = "mortgage"]) [mean [capital] of owners with [myType = "mortgage"] / 10000] [0]</metric>
+    <metric>ifelse-value (any? owners with [myType = "rent"]) [mean [capital] of owners with [myType = "rent"] / 10000] [0]</metric>
+    <metric>ifelse-value (any? owners with [myType = "mortgage" and propensity &gt; (1 - investors)]) [mean [capital] of owners with [myType = "mortgage" and propensity &gt; (1 - investors)] / 10000] [0]</metric>
     <metric>medianPriceOfHousesForSale</metric>
     <metric>medianSalePriceHouses</metric>
     <metric>medianPriceOfHousesForRent</metric>
     <metric>medianRentPriceRentHouses</metric>
-    <metric>count owners with [on-market-type = "mortgage" and first-time? = true]</metric>
-    <metric>count owners with [first-time? = true]</metric>
+    <metric>ifelse-value (any? owners with [on-market-type = "mortgage" and first-time? = true]) [count owners with [on-market-type = "mortgage" and first-time? = true]] [0]</metric>
+    <metric>ifelse-value (any? owners with [first-time? = true]) [count owners with [first-time? = true]] [0]</metric>
     <metric>medianPriceFirstTime</metric>
     <metric>nWealth10k</metric>
     <metric>nWealth10k-50k</metric>
@@ -41683,25 +41680,25 @@ if (ticks / TicksPerYear) = mYear [
     <metric>nWealth2m-5m</metric>
     <metric>nWealth5m</metric>
     <metric>gini-wealth</metric>
-    <metric>count owners with [length my-ownership = 0]</metric>
-    <metric>count owners with [length my-ownership = 1]</metric>
-    <metric>count owners with [length my-ownership = 2]</metric>
-    <metric>count owners with [length my-ownership = 3]</metric>
-    <metric>count owners with [length my-ownership &gt; 3]</metric>
+    <metric>ifelse-value (any? owners with [length my-ownership = 0]) [count owners with [length my-ownership = 0]] [0]</metric>
+    <metric>ifelse-value (any? owners with [length my-ownership = 1]) [count owners with [length my-ownership = 1]] [0]</metric>
+    <metric>ifelse-value (any? owners with [length my-ownership = 2]) [count owners with [length my-ownership = 2]] [0]</metric>
+    <metric>ifelse-value (any? owners with [length my-ownership = 3]) [count owners with [length my-ownership = 3]] [0]</metric>
+    <metric>ifelse-value (any? owners with [length my-ownership &gt; 3]) [count owners with [length my-ownership &gt; 3]] [0]</metric>
     <metric>medianSalePriceXYLocality</metric>
     <metric>medianSalePriceXYModifyRadius</metric>
     <metric>medianRentPriceXYLocality</metric>
     <metric>medianRentPriceXYModifyRadius</metric>
     <metric>ageOwnershipWealth</metric>
-    <metric>count houses with [myType = "social"]</metric>
+    <metric>ifelse-value (any? houses with [myType = "social"]) [count houses with [myType = "social"]] [0]</metric>
     <metric>length transactionsRightToBuy</metric>
     <metric>medianPriceRightToBuy</metric>
     <metric>medianPriceOfHousesForRightToBuy</metric>
     <metric>medianRentPriceSocialHouses</metric>
     <metric>medianPriceOfHousesForSocial</metric>
     <metric>length [waiting-list] of public-sector 0</metric>
-    <metric>count owners with [myType = "social"]</metric>
-    <metric>count owners with [member? "right-to-buy" mortgage-type]</metric>
+    <metric>ifelse-value (any? owners with [myType = "social"]) [count owners with [myType = "social"]] [0]</metric>
+    <metric>ifelse-value (any? owners with [member? "right-to-buy" mortgage-type]) [count owners with [member? "right-to-buy" mortgage-type]] [0]</metric>
     <metric>nBandA</metric>
     <metric>nBandB</metric>
     <metric>nBandC</metric>
